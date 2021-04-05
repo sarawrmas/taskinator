@@ -1,10 +1,12 @@
 // creates variable to target button id
-var buttonEl = document.querySelector("#save-task");
+var formEl = document.querySelector("#task-form");
 // creates variable to target ul id
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 
 // function to excecute adding li's
-var createTaskHandler = function() {
+var createTaskHandler = function(event) {
+    // prevents browser from automatically refreshing when submitted
+    event.preventDefault();
     // creates variable to create a list item object
     var listItemEl = document.createElement("li");
     // identifies the class name of new li to apply CSS styling
@@ -15,5 +17,5 @@ var createTaskHandler = function() {
     tasksToDoEl.appendChild(listItemEl);
 };
 
-// event listener to trigger event handler when button is clicked using li-adding function
-buttonEl.addEventListener("click", createTaskHandler);
+// event listener triggers when user submits (clicks button or types enter) new li
+formEl.addEventListener("submit", createTaskHandler);

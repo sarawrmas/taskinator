@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Taskinator</title>
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -16,9 +17,11 @@
             Click the button below to add a new task!
         </p>
         <form id="task-form">
+            <!-- User enters name of their task -->
             <div class="form-group">
-                <input type="text" name="task-name" placeholder="Enter Task Name" />
+                <input type="text" name="task-name" class="text-input" placeholder="Enter Task Name" />
             </div>
+            <!-- Dropdown list to select task type -->
             <div class="form-group">
                 <select name="task-type" class="select-dropdown">
                     <option value="" disabled selected>Pick a task type</option>
@@ -27,6 +30,7 @@
                     <option value="Mobile">Mobile</option>
                 </select>
             </div>
+            <!-- Submit button to add task -->
             <div class="form-group">
                 <button class="btn" id="save-task" type="submit">Add Task</button>
             </div>
@@ -46,6 +50,7 @@
         &copy;2021 by Taskinator
     </footer>
 
+    <!-- Link to JavaScript -->
 <script src="./assets/js/script.js"></script>
 </body>
 
