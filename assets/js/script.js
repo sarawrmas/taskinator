@@ -4,6 +4,8 @@ var formEl = document.querySelector("#task-form");
 var tasksToDoEl = document.querySelector("#tasks-to-do");
 // creates a counter that increments by one each time a task is created
 var taskIdCounter = 0;
+// variable to target page content id for delete buttons
+var pageContentEl = document.querySelector('#page-content');
 
 // function to excecute adding li's
 var taskFormHandler = function(event) {
@@ -89,3 +91,21 @@ var createTaskActions = function(taskId) {
 
 // event listener triggers when user submits (clicks button or types enter) new li
 formEl.addEventListener("submit", taskFormHandler);
+
+// 
+var taskButtonHandler = function(event) {
+
+    if (event.target.matches(".delete-btn")) {
+        // get the element's task id
+        var taskId = event.target.getAttribute("data-task-id");
+        deleteTask(taskId);
+    }
+};
+
+var deleteTask = function(taskId) {
+    var taskSelected = document.querySelector(".task-item[data-task-id='" + taskId + "']");
+    taskSelected.remove();
+};
+
+// event listener triggers when user deletes a task
+pageContentEl.addEventListener("click", taskButtonHandler);
