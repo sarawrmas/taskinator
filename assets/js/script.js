@@ -71,6 +71,8 @@ var createTaskEl = function(taskDataObj) {
     tasksToDoEl.appendChild(listItemEl);
     // increase task counter by 1 for next unique id
     taskIdCounter++;
+    // call savetasks() function
+    saveTasks();
 };
 
 var createTaskActions = function(taskId) {
@@ -159,6 +161,9 @@ var completeEditTask = function(taskName, taskType, taskId) {
     alert("Task Updated!");
     formEl.removeAttribute("data-task-id");
     document.querySelector("#save-task").textContent = "Add Task";
+
+    // call savetasks() function
+    saveTasks();
 };
 
 // delete task function
@@ -176,6 +181,9 @@ var deleteTask = function(taskId) {
     }
     // reassign tasks array to be the same as updatedTaskArr
     tasks = updatedTaskArr;
+
+    // call savetasks() function
+    saveTasks();
 };
 
 var taskStatusChangeHandler = function(event) {
@@ -203,13 +211,19 @@ var taskStatusChangeHandler = function(event) {
             tasks[i].status = statusValue;
         }
     }
+
+    // call savetasks() function
+    saveTasks();
 };
+
+// saves created tasks to local storage
+var saveTasks = function() {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+}
 
 // event listener triggers when user deletes a task
 pageContentEl.addEventListener("click", taskButtonHandler);
-
 // event listener triggers when user submits (clicks button or types enter) new li
 formEl.addEventListener("submit", taskFormHandler);
-
 // event listener triggers when moving tasks between columns
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
