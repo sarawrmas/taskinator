@@ -2,8 +2,9 @@
 
 ## Table of Contents
 * [Deployed](#deployed)
-* [Technologies](#technologies)
 * [Description](#description)
+* [Technologies](#technologies)
+* [Usage](#usage)
 * [Preview](#preview)
 * [Questions](#questions)
 * [Credits](#credits)
@@ -11,13 +12,22 @@
 ## Deployed
 Access the application at https://sarawrmas.github.io/taskinator/
 
+## Description
+Taskinator is a simple application that allows you to keep track of tasks. 
+
 ## Technologies
 * HTML
 * CSS
 * JavaScript
 
-## Description
-Taskinator is a simple application that allows you to keep track of tasks. To use, simply enter the name of your task at the prompt, select the task type, and hit submit. Your task will automatically appear in the Tasks To Do box, but you can change its status by selecting from the dropdown in the task box. If you need to edit your task name or type, click "Edit" and the Enter Task Name prompt will refill with the existing information that can then be updated and saved. To delete a task, select Delete from the task's options.
+## Usage
+Use the textboxes at the top to create a task. Enter the name of your task, select the task type, and hit submit.
+
+Your task will automatically appear in the Tasks To Do box, but you can change its status by selecting a new status from the dropdown in the task's box. After selection, the task will move to the appropriate status box.
+
+To edit a task, select the "Edit" button for the task you'd like to update and its contents will repopulate in the top entry prompt. To change the title, type a new title in the first textbox. To change the type, select new type from the dropdown. To save your edited task, select "Save Task" button and it will update below.
+
+To delete a task, select "Delete" within a task body and the task will automatically be removed.
 
 ## Preview
 ![A screenshot of the application](./assets/images/screenshot.png)
